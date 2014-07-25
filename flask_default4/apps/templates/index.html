@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>News Crawler</title>
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+    #title {
+		font-size: 50px;
+		font-family: Helvetica;
+		text-align: center;
+		font-weight: bold;
+		background-color: green;
+		color: white;
+		border-radius: 3px;
+		border-style: solid;
+
+    }
+    .subtitle {
+    	color: black;
+    	font-weight: bold;
+    	font-family: Times;
+
+    }
+    .keyword{
+		font-family: Times;
+		font-weight: bold;
+		color: green;
+		background-color: white;
+		background-size: 30%;
+		border-style: solid;
+		font-size: 30px;
+    }
+    
+    
+    body { 
+    	text-align: center;
+    	background: url("http://i1.ytimg.com/vi/AHNSyoEX2I4/maxresdefault.jpg");
+    	color: white;
+    	font-family: Helvetica;
+    	background-size: cover;
+    	background-position: center center;
+    	background-repeat: no-repeat;
+    	background-attachment: fixed;
+    }
+	.buttons {
+		font-family: Times;
+		font-weight: bold;
+		color: green;
+		background-color: transparent;
+		
+		font-size: 30px;
+		display: block;
+		background-size: 20%;
+	}
+
+	.btns{
+		background-color: transparent;
+		display: inline-block;
+	}
+	.crawled {
+		background-color: gray;
+		background-size: 200px 200px;
+		background-position: right;
+
+	}
+
+    </style>
+</head>
+<body>
+		<h1 id="title">Naver News Crawl</h1> 
+		<h2 class="subtitle"><h2>	
+	 	<form action="/crawl" method="get">
+			<p class="keyword">Search right away? (english onlyT_T)
+			<input type="text" name="search"/>
+			<input type="submit" value="GO!"/>
+			</p>
+	 	</form>
+
+	 	<div class="buttons"> 
+
+		<form class="btns" action="/crawl" method="post">
+			<button name="politics" value="100" class="btn btn-success btn-lg">Politics</button>
+		</form>
+
+		<form class="btns" action="/crawl" method="post">
+			<button name="economy" value="101" class="btn btn-success btn-lg">Economy</button>
+		</form>
+
+		<form class="btns" action="/crawl" method="post">
+			<button name="social" value="102 "class="btn btn-success btn-lg">
+			Social</button>
+		</form>
+
+		<form class="btns" action="/crawl" method="post">
+			<button name="life" value="103" class="btn btn-success btn-lg">Life</button>
+		</form>
+
+		<form class="btns" action="/crawl" method="post">
+		<button name="world" value="104" class="btn btn-success btn-lg">World</button>
+		</form>
+		
+		<form class="btns" action="/crawl" method="post">
+		<button name="IT" value="105" class="btn btn-success btn-lg">IT</button>
+	    </form>
+
+		<form class="btns" action="/crawl" method="post">
+		<button name="entertain" value="106" class="btn btn-success btn-lg">Entertain</button>
+		</form>
+
+		</div>
+		<div class="crawled">
+				{% for each in result %}
+				<p>
+					{{ each }}
+				</p>
+				{% endfor %}
+				{% if result %}
+					
+				{% endif %}
+
+		</div>
+</body>
+
+</html>
+
+</html>
+
+
+
+
